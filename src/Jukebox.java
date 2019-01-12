@@ -11,7 +11,10 @@ import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -24,14 +27,17 @@ public class Jukebox implements Runnable {
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Jukebox());
 	}
-
+JFrame frame = new JFrame();
+JPanel pan = new JPanel();
+JButton but1 = new JButton();
+JButton but2 = new JButton();
            public void run() {
-
+        	   jStuff();
 		// 3. Find an mp3 on your computer or on the Internet.
 		// 4. Create a Song
-
+        	   	Song REM = new Song("rem-its-the-end-of-the-world.mp3");
 		// 5. Play the Song
-
+        	   	REM.play();
 		/*
 		 * 6. Create a user interface for your Jukebox so that the user can to
 		 * choose which song to play. You can use can use a different button for
@@ -39,7 +45,26 @@ public class Jukebox implements Runnable {
 		 * cover is clicked, stop the currently playing song, and play the one
 		 * that was selected.
 		 */
+        	   	
+        	   	
+        	   	
           }
+        private void jStuff() {
+        	frame.add(pan);
+        	frame.setVisible(true);
+        	but1.setText("end O' the world");
+        	but1.setSize(50, 50);
+        	but2.setText("We didn't start it");
+        	but2.setSize(50, 50);
+        	pan.add(but1);
+        	frame.pack();
+        	pan.add(but2);
+        	frame.pack();
+        	
+        	
+        	
+        }
+           
 	/* Use this method to add album covers to your Panel. */
 	private JLabel loadImage(String fileName) {
 		URL imageURL = getClass().getResource(fileName);
