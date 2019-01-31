@@ -4,6 +4,8 @@
  */
 
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -22,7 +24,7 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
 /* 1. Download the JavaZoom jar from here: http://bit.ly/javazoom
  * 2. Right click your project and add it as an External JAR (Under Java Build Path > Libraries).*/
 
-public class Jukebox implements Runnable {
+public class Jukebox implements Runnable, ActionListener {
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Jukebox());
@@ -35,9 +37,9 @@ JButton but2 = new JButton();
         	   jStuff();
 		// 3. Find an mp3 on your computer or on the Internet.
 		// 4. Create a Song
-        	   	Song REM = new Song("rem-its-the-end-of-the-world.mp3");
+        	   	
 		// 5. Play the Song
-        	   	REM.play();
+        	 
 		/*
 		 * 6. Create a user interface for your Jukebox so that the user can to
 		 * choose which song to play. You can use can use a different button for
@@ -60,7 +62,8 @@ JButton but2 = new JButton();
         	frame.pack();
         	pan.add(but2);
         	frame.pack();
-        	
+        	but1.addActionListener(this);	
+        	but2.addActionListener(this);
         	
         	
         }
@@ -70,6 +73,18 @@ JButton but2 = new JButton();
 		URL imageURL = getClass().getResource(fileName);
 		Icon icon = new ImageIcon(imageURL);
 		return new JLabel(icon);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource()==but1) {
+			Song REM = new Song("rem-its-the-end-of-the-world.mp3");
+			REM.play();
+		}
+		else {
+			  Song FireStarter = new Song("billy-joel-we-didnt-start-the-fire-official-video.mp3");
+		FireStarter.play();
+		}
 	}
 
 }

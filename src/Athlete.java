@@ -20,14 +20,28 @@
 
 	public static void main(String[] args) {
 	     //create two athletes      //print their names, bibNumbers, and the location of their race. }
+		
 		Athlete triath = new Athlete("jim", 4000);
-	System.out.println(triath.name);
-	System.out.println(triath.raceLocation);
-	System.out.println(triath.bibNumber);
+		System.out.println(triath.name);
+		System.out.println(triath.raceLocation);
+		System.out.println(triath.raceStartTime);
+		System.out.println(triath.bibNumber);
 		
 		Athlete biath = new Athlete("Bob McBob", 2000);
+		System.out.println(biath.name);
+		System.out.println(biath.raceLocation);
+		System.out.println(biath.raceStartTime);
+		System.out.println(biath.bibNumber);
+	raceLocation = "The Pacific Ocean";
+	raceStartTime = "1 AM";
 	System.out.println(biath.name);
 	System.out.println(biath.raceLocation);
+	System.out.println(biath.raceStartTime);
 	System.out.println(biath.bibNumber);
+	
+	System.out.println(triath.name);
+	System.out.println(triath.raceLocation);
+	System.out.println(triath.raceStartTime);
+	System.out.println(triath.bibNumber);
 	}
 }
