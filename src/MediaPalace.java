@@ -98,7 +98,9 @@ public class MediaPalace {
 		try {
 			Runtime.getRuntime().exec("say " + words).waitFor();
 		} catch (Exception e) {
+			System.out.println("Problem saying sound: " + words);
 			e.printStackTrace();
+			
 		}
 	}
 
