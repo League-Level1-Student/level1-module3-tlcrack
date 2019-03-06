@@ -1,6 +1,6 @@
 int birdX=500;
 int birdY=500;
-int birdYV=100;
+int birdYV=70;
 int grav=5;
 int pipeX=700;
 int upperPipeHeight = (int) random(100, 550);
@@ -54,7 +54,7 @@ void teleportPipes(){
 boolean intersectsPipes() { 
      if (birdY - 25 < upperPipeHeight && birdX + 25 > pipeX && birdX - 25 < (pipeX+200)){
           return true; }
-     else if (birdY>LowerPHeight && birdX > pipeX && birdX < (pipeX+200)) {
+     else if (birdY + 25 >LowerPHeight && birdX + 25 > pipeX && birdX - 25 < (pipeX+200)) {
           return true; }
      else { return false; }
 }
